@@ -1,69 +1,58 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Tic Tac Toe</title>
+      <title>Play Tic Tac Toe</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-      <script>
-
-      function startGame() {
-        document.turn = "x";
-      }
-
-      function nextMove("col-as-4 game-cell") {
-        "col-as-4 game-cell".innerText = document.turn;
-        switchTurn();
-      }
-
-      function switchTurn() {
-        if (document.turn === "x") {
-          document.turn = "o";
-        } else {
-          document.turn = 'x';
-        }
-      }
-
-      </script>
-
     </head>
+    <body class="container-fluid">
 
-    <body onLoad="startGame();">
-      <h1> TIC TAC TOE </h1>
-      <nav class="navbar">
-        <button type="button" id="sign-in"class="btn btn-default navbar-btn navbar-right">Sign In</button>
-      </nav>
+<h1>I WANT TO PLAY A GAME</h1>
 
-      <div class="container"></div>
-          <div class="board-wrapper"></div>
-            <div class="row">
-              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
-              1</div>
-              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
-              2</div>
-              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
-              3</div>
+        <h5>Sign Up:</h5>
+    <form action="#" id="sign-up">
+        <input type="text" name="credentials[email]" placeholder="email">
+        <input type="password" name="credentials[password]" placeholder="password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="confirm password">
+        <input type="submit" name="submit" class= "sign-up-button" value="Sign Up">
+    </form>
+
+        <h5>Sign In:</h5>
+    <form action="#" id="sign-in">
+        <input type="text" name="credentials[email]" placeholder="email">
+        <input type="password" name="credentials[password]" placeholder="password">
+        <input type="submit" name="submit" class= "sign-in-button" value="Sign In">
+    </form>
+
+        <h5>Change Password</h5>
+      <form id="change-password">
+        <input type="password" name="passwords[old]" placeholder="old password">
+        <input type="password" name="passwords[new]" placeholder="new password">
+        <input type="submit" name="submit" class= "change-password-button" value="Change Password">
+    </form>
+
+        <h5>Sign Out:</h5>
+      <form action="#" id="sign-out">
+        <input type="submit" name="submit" class= "sign-out-button" value="Sign Out">
+    </form>
+
+    <div class="container">
+        <div class="row">
+          <div class="grid-one grid" data-value ="one" data-spot="R1C1"></div>
+          <div class="grid-two grid" data-value ="two" data-spot="R1C2"></div>
+          <div class="grid-three grid" data-value ="three" data-spot="R1C3"></div>
         </div>
-            <div class="row">
-              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
-              4</div>
-              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
-              5</div>
-              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
-              6</div>
+        <div class="row">
+          <div class="grid-four grid" data-value ="four" data-spot="R2C1"></div>
+          <div class="grid-five grid" data-value ="five" data-spot="R2C2"></div>
+          <div class="grid-six grid" data-value ="six" data-spot="R2C3"></div>
         </div>
-            <div class="row">
-              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
-              7</div>
-              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
-              8</div>
-              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
-              9</div>
+        <div class="row">
+          <div class="grid-seven grid" data-value ="seven" data-spot="R3C1"></div>
+          <div class="grid-eight grid" data-value ="eight" data-spot="R3C2"></div>
+          <div class="grid-nine grid" data-value ="nine" data-spot="R3C3"></div>
         </div>
-
-
-          <h1>I WANT TO PLAY A GAME</h1>
-
-      <p></p>
+      </div>
     </body>
 </html>
