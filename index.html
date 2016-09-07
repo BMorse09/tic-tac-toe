@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
 
       <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+      <script>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+      function startGame() {
+        document.turn = "x";
+      }
+
+      function nextMove("col-as-4 game-cell") {
+        "col-as-4 game-cell".innerText = document.turn;
+        switchTurn();
+      }
+
+      function switchTurn() {
+        if (document.turn === "x") {
+          document.turn = "o";
+        } else {
+          document.turn = 'x';
+        }
+      }
+
+      </script>
+
+    </head>
+
+    <body onLoad="startGame();">
+      <h1> TIC TAC TOE </h1>
+      <nav class="navbar">
+        <button type="button" id="sign-in"class="btn btn-default navbar-btn navbar-right">Sign In</button>
+      </nav>
+
+      <div class="container"></div>
+          <div class="board-wrapper"></div>
+            <div class="row">
+              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
+              1</div>
+              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
+              2</div>
+              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
+              3</div>
+        </div>
+            <div class="row">
+              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
+              4</div>
+              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
+              5</div>
+              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
+              6</div>
+        </div>
+            <div class="row">
+              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
+              7</div>
+              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
+              8</div>
+              <div class="col-xs-4 game-cell" onClick="nextMove(this);">
+              9</div>
+        </div>
+
+
+          <h1>I WANT TO PLAY A GAME</h1>
+
+      <p></p>
     </body>
 </html>

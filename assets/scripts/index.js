@@ -4,4 +4,9 @@
 // var example = require('./example');
 
 // use require without a reference to ensure a file is bundled
-require('./example');
+// const getFormFields = require('../../../lib/get-form-fields');
+//
+// const api = require('./api')
+// const ui = require('.ui')
+//
+// $('#sign-in').on('submit', events.onSignIn);
