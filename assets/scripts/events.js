@@ -43,3 +43,21 @@ module.exports = {
   onChangePassword,
   onSignOut
 };
+
+// $('#sign-in').on('click', function() {
+// $('#signInModal').modal('show');
+// });
+//
+// $('#sign-in-button').on('click' ,function() {
+// $('#signInModal').modal('hide');
+// $('#sign-out').show();
+// $('#change-password').show();
+// $('#sign-up').hide();
+// $('#sign-in').hide();
+// });
+//
+// $(document).ready(function() {
+// $('#sign-out').hide();
+// $('#change-password').hide();
+// $('#signInModal').modal('show');
+// });

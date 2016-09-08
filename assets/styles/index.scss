@@ -3,81 +3,33 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 $background-color: #36454f;
 $font-color: #fc3;
-$border-color: #fc3;
+$unit: 30px;
+$width: (6 * $unit);
+$height: (6 * $unit);
 
 body {
   background-color: $background-color;
   color: $font-color;
-};
+}
+
+.row > .col-xs-4 {
+  border: 2px solid $font-color;
+  box-sizing: border-box;
+  height: $height;
+  padding: 78px;
+  width: $width;
+}
+
+.game-board {
+  margin: 0 auto;
+  width: 50%;
+}
 
 .container {
-  height: 60px;
+  margin: 0 30%;
   text-align: center;
-  vertical-align: middle;
-  width: 60px;
-
-};
-
-.grid {
-  float: left;
-  height: 20px;
-  line-height: 18px;
-  margin: 100;
-  width: 33.3333333%;
-
-};
-
-.grid-one {
-  border-bottom: 1px solid $border-color;
-  border-right: 1px solid $border-color;
-  padding-top: 1px;
-
-};
-
-.grid-two {
-  border-bottom: 1px solid $border-color;
-  border-left: 1px solid $border-color;
-  border-right: 1px solid $border-color;
-  padding-top: 1px;
 }
 
-.grid-three {
-  border-bottom: 1px solid $border-color;
-  border-left: 1px solid $border-color;
-  padding-top: 1px;
-}
-
-.grid-four {
-  border-bottom: 1px solid $border-color;
-  border-right: 1px solid $border-color;
-  border-top: 1px solid $border-color;
-}
-
-.grid-five {
-  border: 1px solid $border-color;
-}
-
-.grid-six {
-  border-bottom: 1px solid $border-color;
-  border-left: 1px solid $border-color;
-  border-top: 1px solid $border-color;
-}
-
-.grid-seven {
-  border-right: 1px solid $border-color;
-  border-top: 1px solid $border-color;
-  padding-top: 1px;
-}
-
-.grid-eight {
-  border-left: 1px solid $border-color;
-  border-right: 1px solid $border-color;
-  border-top: 1px solid $border-color;
-  padding-top: 1px;
-}
-
-.grid-nine {
-  border-left: 1px solid $border-color;
-  border-top: 1px solid $border-color;
-  padding-top: 1px;
+.navbar-right {
+  margin: 18px;
 }
