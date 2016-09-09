@@ -1,9 +1,7 @@
 'use strict';
 
-require('.example');
-
-const authEvents = require('./assets/auth/events.js');
-const gameEvents = require('./assets/game/game-logic.js');
+const authEvents = require('./auth/events.js');
+const gameEvents = require('./game/events.js');
 
 $(() => {
   $('#createUser').on('submit', authEvents.onCreateUser);
@@ -11,6 +9,6 @@ $(() => {
   $('#changePassword').on('submit', authEvents.onSignInUser);
   $('sign-out-modal-button').on('click', authEvents.onSignOutUser);
   $('new-game-button').on('click', gameEvents.onNewGame);
-  $('.col-xs-4').on('click', gameEvents.setCharacter);
+  $('.col-xs-4').on('click', gameEvents.onPlaceX);
 
 });
