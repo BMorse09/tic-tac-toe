@@ -10,5 +10,4 @@ $(() => {
   $('sign-out-modal-button').on('click', authEvents.onSignOutUser);
   $('new-game-button').on('click', gameEvents.onNewGame);
   $('.col-xs-4').on('click', gameEvents.onPlaceX);
-
 });
