@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html>
  <head>
-   <title>Example For Bootstrap</title>
-   <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
-   <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    <title>tic tac toe.</title>
+    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
  </head>
- <body>
-   <nav class="navbar">
-     <button type="button" id="change-password" class="btn btn-default navbar-btn navbar-right">change password</button>
-     <button type="button" id="sign-out" class="btn btn-default navbar-btn navbar-right">sign out</button>
-     <button type="button" id="sign-in" class="btn btn-default navbar-btn navbar-right">sign in</button>
-     <button type="button" id="sign-up" class="btn btn-default navbar-btn navbar-right">sign up</button>
-   </nav>
+    <body>
+          <nav class="navbar">
+            <button type="button" id="change-password" class="btn btn-default navbar-btn navbar-right">change password</button>
+            <button type="button" id="sign-out" class="btn btn-default navbar-btn navbar-right">sign out</button>
+            <button type="button" id="sign-in" class="btn btn-default navbar-btn navbar-right">sign in</button>
+            <button type="button" id="sign-up" class="btn btn-default navbar-btn navbar-right">sign up</button>
+          </nav>
+
+      <form id= "getGameById">
+        <input type="submit" value="Get Game by ID" class="btnstyle">
+        <input name=getGameById type="number" placeholder="Game ID">
+      </form>
 
    <h1>tic tac toe.</h1>
 
-   <div class="game-over" id=gameOver>
-
-  </div>
+      <div class="game-over" id=gameOver></div>
 
 
-   <div class="container">
+      <div class="container">
+          <div class="row">
+            <div class="col-xs-4" id="0"></div>
+            <div class="col-xs-4" id="1"></div>
+            <div class="col-xs-4" id="2"></div>
+          </div>
      <div class="row">
-       <div class="col-xs-4" id="0"></div>
-       <div class="col-xs-4" id="1"></div>
-       <div class="col-xs-4" id="2"></div>
-     </div>
+          <div class="col-xs-4" id="3"></div>
+            <div class="col-xs-4" id="4"></div>
+            <div class="col-xs-4" id="5"></div>
+          </div>
      <div class="row">
-       <div class="col-xs-4" id="3"></div>
-       <div class="col-xs-4" id="4"></div>
-       <div class="col-xs-4" id="5"></div>
+          <div class="col-xs-4" id="6"></div>
+            <div class="col-xs-4" id="7"></div>
+            <div class="col-xs-4" id="8"></div>
+          </div>
      </div>
-     <div class="row">
-       <div class="col-xs-4" id="6"></div>
-       <div class="col-xs-4" id="7"></div>
-       <div class="col-xs-4" id="8"></div>
-     </div>
-   </div>
-      <button type="button" id= "new-game" class="btn btn-default">new game</button>
 
-  </body>
+        <button type="button" id="new-game-button" class="btn btn-default">new game</button>
 
-  </html>
+    </body>
+
+</html>

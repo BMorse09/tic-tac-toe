@@ -1,6 +1,6 @@
 'use strict';
 
-let app = require('../app');
+const app = require('../app');
 
 const success = (data) => {
   console.log(data);
@@ -13,11 +13,14 @@ const failure = (error) => {
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(data);
-  $('#sign-in').hide();
-  $('#sign-up').hide();
-  $('#change-password').show();
-  $('#sign-out').show();
-};
+  $('.app').css("display", "block");
+  $('.space').text('');
+  $('h1').text('');
+//   $('#sign-in').hide();
+//   $('#sign-up').hide();
+//   $('#change-password').show();
+//   $('#sign-out').show();
+  };
 
 const changePasswordSuccess = () => {
   console.log('Password changed.');
