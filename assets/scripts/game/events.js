@@ -17,16 +17,16 @@ let gameOver = false;
     }
 };
 
-  const onNewGame = function onNewGame (event) {
+  const onNewGame = function (event) {
       event.preventDefault();
        $('.col-xs-4').html('');
-       let data = {};
-       api.newGame(data)
-      .done(ui.onNewGameSuccess)
-      .fail(ui.onError);
+      //  let data = {};
+      //  api.newGame(data)
+      // .done(ui.onNewGameSuccess)
+      // .fail(ui.onError);
 
 
-};
+  };
 
   const onPlaceX = function (event) {
         if(!gameOver){
@@ -48,7 +48,7 @@ let gameOver = false;
         }
 
       } else if (app.player === 'o') {
-              app.player = 'x';
+                 app.player = 'x';
         let cellclicked = event.target;
 
         if (gameBoardArray[id] === '') {
@@ -62,6 +62,10 @@ let gameOver = false;
         }
     }
   }
+  // if (gameBoardArray[id] === '') {
+  //   $("#new-game-button")
+  // }
+  // console.log(gameBoardArray);
 };
 
 let win = function (cells, id) {
@@ -75,39 +79,37 @@ let win = function (cells, id) {
       }
   } else if (['2', '5', '8'].indexOf(id) > -1) {
       if ((cells[2] === cells[5]) && (cells[5] === cells[8])) {
-          return true;
-        }
-    }
+        return true;
+      }
+  }
 
 
   if (['0', '1', '2'].indexOf(id) > -1) {
       if ((cells[0] === cells[1]) && (cells[1] === cells[2])) {
-          return true;
-        }
+        return true;
+      }
   } else if (['3', '4', '5'].indexOf(id) > -1) {
       if ((cells[3] === cells[4]) && (cells[4] === cells[5])) {
-          return true;
-        }
+        return true;
+      }
   } else if (['6', '7', '8'].indexOf(id) > -1) {
-        if ((cells[6] === cells[7]) && (cells[7] === cells[8])) {
-          return true;
-        }
-    }
+      if ((cells[6] === cells[7]) && (cells[7] === cells[8])) {
+        return true;
+      }
+  }
 
   if (['0', '4', '8'].indexOf(id) > -1) {
       if ((cells[0] === cells[4]) && (cells[4] === cells[8])) {
-          return true;
-        }
+        return true;
+      }
   } else if (['2', '4', '6'].indexOf(id) > -1) {
       if ((cells[2] === cells[4]) && (cells[4] === cells[6])) {
-          return true;
-        }
-    }
+        return true;
+      }
+  }
 
   return false;
 };
-
-
 
 module.exports = {
   changePlayer,

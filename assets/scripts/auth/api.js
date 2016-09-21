@@ -41,7 +41,7 @@ const signOut = () => {
 
 const getGameById = function (data){
   return $.ajax({
-    url: app.host + '/games/' + data.getGameById,
+    url: app.host + '/games/' + app.game.id,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token

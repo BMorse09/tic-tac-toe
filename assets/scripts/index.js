@@ -2,12 +2,30 @@
 
 const authEvents = require('./auth/events.js');
 const gameEvents = require('./game/events.js');
+const modalEventHandlers = function (){
+      $('#sign-up-button').on ('click', function(){
+        $('#sign-up-modal').modal('show');
+      });
+
+      $('#sign-in-button').on ('click', function(){
+        $('#sign-in-modal').modal('show');
+      });
+
+      $('#sign-out-button').on('click', authEvents.onSignOutUser);
+      };
+
+      $('#change-password').on('click',function(){
+        $('#change-password-modal').modal('show');
+      });
 
 $(() => {
-  $('#createUser').on('submit', authEvents.onCreateUser);
-  $('#signInUser').on('submit', authEvents.onSignInUser);
-  $('#changePassword').on('submit', authEvents.onSignInUser);
-  $('sign-out-modal-button').on('click', authEvents.onSignOutUser);
-  $('new-game-button').on('click', gameEvents.onNewGame);
+  $('#sign-up').on('submit', authEvents.onSignUpUser);
+  $('#sign-in').on('submit', authEvents.onSignInUser);
+  $('#change-Password').on('submit', authEvents.onChangePassword);
+  // $('sign-out-modal-button').on('click', authEvents.onSignOutUser);
+  $('#new-game-button').on('click', gameEvents.onNewGame);
   $('.col-xs-4').on('click', gameEvents.onPlaceX);
+
+  modalEventHandlers ();
+  $('#gameBoard').hide();
 });

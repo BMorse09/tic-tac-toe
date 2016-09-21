@@ -3,6 +3,7 @@
 const app = require('../app');
 
 const success = (data) => {
+  // app.user = data.user;
   console.log(data);
 };
 
@@ -13,6 +14,8 @@ const failure = (error) => {
 const signInSuccess = (data) => {
   app.user = data.user;
   console.log(data);
+  $('#sign-in-modal').modal('hide');
+  $('#gameBoard').show();
   $('.app').css("display", "block");
   $('.space').text('');
   $('h1').text('');
@@ -24,15 +27,12 @@ const signInSuccess = (data) => {
 
 const changePasswordSuccess = () => {
   console.log('Password changed.');
+  $('#gameBoard').hide();
 };
 
 const signOutSuccess = () => {
   app.user = null;
-  console.log('You have signed out!');
-  $('#sign-in').show();
-  $('#sign-up').show();
-  $('#sign-out').hide();
-  $('#change-password').hide();
+  $('#gameBoard').hide();
 };
 
 module.exports = {
