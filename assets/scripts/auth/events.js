@@ -6,7 +6,7 @@ const api = require('./api');
 const ui = require('./ui');
 
 const onSignUpUser = function (event) {
-  let data = getFormFields(this);
+  let data = getFormFields(event.target);
   event.preventDefault();
   api.signUp(data)
   .done(ui.success)
@@ -14,8 +14,8 @@ const onSignUpUser = function (event) {
 };
 
 const onSignInUser = function (event) {
-  let data = getFormFields(this);
   event.preventDefault();
+  let data = getFormFields(event.target);
   // $('.player-id').text("Hello!: " + data);
   api.signIn(data)
   .done(ui.signInSuccess)
@@ -23,15 +23,15 @@ const onSignInUser = function (event) {
 };
 
 const onChangePassword = function (event) {
-  let data = getFormFields(this);
   event.preventDefault();
+  let data = getFormFields(event.target);
+  debugger;
   api.changePassword(data)
   .done(ui.changePasswordSuccess)
   .fail(ui.failure);
 };
 
-const onSignOutUser = function (event) {
-  event.preventDefault();
+const onSignOutUser = function () {
   api.signOut()
   .done(ui.signOutSuccess)
   .fail(ui.failure);
@@ -53,19 +53,16 @@ const clearBoard = function (event) {
 
 };
 
-// const addHandlers = () => {
-//   $('#sign-up').on('submit', onSignUp);
-//   $('#sign-in').on('submit', onSignIn);
-//   $('#change-password').on('submit', onChangePassword);
-//   $('#sign-out').on('submit', onSignOut);
+const addHandlers = () => {
+  $('#sign-up').on('submit', onSignUpUser);
+  $('#sign-in').on('submit', onSignInUser);
+  $('#change-password').on('submit', onChangePassword);
+  $('#sign-out-button').on('click', onSignOutUser);
 //   $('getGameById').on('submit', onGetGameById);
 //   $('#clear-board').on('submit', clearBoard);
-// };
+};
 
 
 module.exports = {
-  // addHandlers,
-  onSignUpUser,
-  onSignInUser,
-  onSignOutUser
+  addHandlers,
 };

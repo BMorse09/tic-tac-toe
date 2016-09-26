@@ -14,18 +14,19 @@ const modalEventHandlers = function (){
       $('#sign-out-button').on('click', authEvents.onSignOutUser);
       };
 
-      $('#change-password').on('click',function(){
+      $('#change-password-button').on('click',function(){
         $('#change-password-modal').modal('show');
       });
 
 $(() => {
-  $('#sign-up').on('submit', authEvents.onSignUpUser);
-  $('#sign-in').on('submit', authEvents.onSignInUser);
-  $('#change-Password').on('submit', authEvents.onChangePassword);
+  // $('#sign-up').on('submit', authEvents.onSignUpUser);
+  // $('#sign-in').on('submit', authEvents.onSignInUser);
+  // $('#change-Password').on('submit', authEvents.onChangePassword);
   // $('sign-out-modal-button').on('click', authEvents.onSignOutUser);
   $('#new-game-button').on('click', gameEvents.onNewGame);
   $('.col-xs-4').on('click', gameEvents.onPlaceX);
 
   modalEventHandlers ();
   $('#gameBoard').hide();
+  authEvents.addHandlers();
 });

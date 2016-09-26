@@ -4,6 +4,7 @@ const api = require('./api');
 const ui = require('./ui');
 const app = require('.././app');
 
+
 let gameBoardArray = ['', '', '', '', '', '', '', '', ''];
 let gameOver = false;
 
@@ -20,10 +21,11 @@ let gameOver = false;
   const onNewGame = function (event) {
       event.preventDefault();
        $('.col-xs-4').html('');
-      //  let data = {};
-      //  api.newGame(data)
-      // .done(ui.onNewGameSuccess)
-      // .fail(ui.onError);
+       $("#gameOver").html('');
+       let data = {};
+       api.newGame(data)
+      .done(ui.onNewGameSuccess)
+      .fail(ui.onError);
 
 
   };
@@ -32,7 +34,7 @@ let gameOver = false;
         if(!gameOver){
         let id=this.id;
           event.preventDefault();
-        if (app.player === 'x') {
+        if (app.player === 'x' && $(this).text() === ''){
             app.player = 'o';
         let cellclicked = event.target;
 
@@ -47,7 +49,7 @@ let gameOver = false;
           } else {
         }
 
-      } else if (app.player === 'o') {
+      } else if (app.player === 'o' && $(this).text() === ''){
                  app.player = 'x';
         let cellclicked = event.target;
 
@@ -57,6 +59,7 @@ let gameOver = false;
             gameOver = win(gameBoardArray, id);
         if (gameOver === true) {
               $("#gameOver").html('player X wins!');
+              $("#new-game-button").html
 
           }
         }
