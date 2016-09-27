@@ -39,20 +39,20 @@ const signOut = () => {
   });
 };
 
-// const getGameById = function (data){
-//   return $.ajax({
-//     url: app.host + '/games/' + data.getGameById,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token
-//     },
-//   });
-// };
+const getGameById = function (data){
+  return $.ajax({
+    url: app.host + '/games/' + data.getGameById,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+  });
+};
 
 module.exports = {
   signUp,
   signIn,
   changePassword,
   signOut,
-  // getGameById
+  getGameById
 };

@@ -59,7 +59,7 @@ let gameOver = false;
             gameOver = win(gameBoardArray, id);
         if (gameOver === true) {
               $("#gameOver").html('player X wins!');
-              $("#new-game-button").html
+              $("#new-game-button").html()
 
           }
         }
@@ -109,7 +109,13 @@ let win = function (cells, id) {
       if ((cells[2] === cells[4]) && (cells[4] === cells[6])) {
         return true;
       }
-  }
+    }
+  //  } else {
+  //   if (counter === 9) {
+  //     gameOver = true;
+  //     counter = 0;
+  //     gameBoardArray = []
+  // }
 
   return false;
 };
