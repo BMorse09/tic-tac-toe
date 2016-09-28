@@ -31,32 +31,22 @@ const changePassword = (data) => {
 
 const signOut = () => {
   return $.ajax({
-    url: app.host + '/sign-out/' +app.user.id,
+    url: app.host + '/sign-out/' + app.user.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
-    }
+    },
   });
 };
 
-// const getGameById = function (data){
-//   return $.ajax({
-//     url: app.host + '/games/' + data.getGameById,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + app.user.token
-//     },
-//   });
-// };
-
-const getGameById = function (data){
+const getGameById = (data) => {
   return $.ajax({
-    url: app.host + '/games/',
+    url: app.host + "/games",
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + app.user.token
     },
-    data: data
+    data: data,
   });
 };
 

@@ -4,7 +4,7 @@ const authEvents = require('./auth/events.js');
 const gameEvents = require('./game/events.js');
 const modalEventHandlers = function (){
       $('#sign-up-button').on ('click', function(){
-        
+
         $('#sign-up-modal').modal('show');
       });
 
@@ -26,7 +26,7 @@ $(() => {
   // $('sign-out-modal-button').on('click', authEvents.onSignOutUser);
   $('#new-game-button').on('click', gameEvents.onNewGame);
   $('.col-xs-4').on('click', gameEvents.onPlaceX);
-  $('#getGameById').on('submit', gameEvents.onGetGame);
+  $('#getGameById').on('click', gameEvents.onGetGameById);
 
   modalEventHandlers ();
   $('#gameBoard').hide();

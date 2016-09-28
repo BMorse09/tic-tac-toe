@@ -12,7 +12,7 @@ SPA Tic-Tac-Toe game. These technologies include:
 
 I began planning with a wireframe aimed towards meeting all the basic
 requirements of the project; my planning included a simple page
-layout with user authentication functionality, along with game 
+layout with user authentication functionality, along with game
 logic and basic game/server interaction. I also developed user
 stories to help guide my planning process:
 
@@ -21,6 +21,8 @@ stories to help guide my planning process:
 -   As a user, I want to track my past game data
 -   As a user, I want to open previous games that are saved
 -   As a user, I want a notification that clearly shows the outcome of a game
+
+Here's a link to my initial wireframe: http://imgur.com/a/8XzB5
 
 Once wireframing and basic planning were complete, I began
 building my project with HTML and minimal CSS, then moved on to

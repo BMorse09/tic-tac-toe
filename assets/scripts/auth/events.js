@@ -38,9 +38,7 @@ const onSignOutUser = function () {
 
 const onGetGameById = function (event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
-  console.log(data);
-  api.getGameById(data)
+  api.getGameById()
     .done(ui.onGetGameByIdSuccess)
     .fail(ui.failure);
   console.log(data);
@@ -58,7 +56,7 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignInUser);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out-button').on('click', onSignOutUser);
-  $('getGameById').on('submit', onGetGameById);
+  $('#getGameById').on('click', onGetGameById);
   $('#clear-board').on('submit', clearBoard);
 };
 

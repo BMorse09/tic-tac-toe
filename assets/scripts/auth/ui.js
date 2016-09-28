@@ -35,9 +35,10 @@ const signOutSuccess = () => {
   $('#gameBoard').hide();
 };
 
-const onGetGameIdSuccess = (data) => {
+const onGetGameByIdSuccess = (data) => {
   console.log(data.length);
-  let length = data.games.length;
+  app.games = data.games;
+  let length = app.games.length;
   $("#gameOver").html(length);
   console.log(data);
 };
@@ -48,5 +49,5 @@ module.exports = {
   signInSuccess,
   changePasswordSuccess,
   signOutSuccess,
-  onGetGameIdSuccess
+  onGetGameByIdSuccess
 };
