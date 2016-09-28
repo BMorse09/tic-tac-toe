@@ -11,9 +11,13 @@ const failure = (error) => {
 };
 
 
-const getGameByIdSuccess = (data) => {
+const getGameSuccess = (data) => {
   app.game = data.game;
   console.log(data);
+};
+
+const newGameSuccess = (data) => {
+  app.game = data.game;
 };
 
 const clearBoard = (data) => {
@@ -23,7 +27,8 @@ const clearBoard = (data) => {
 module.exports = {
   success,
   failure,
-  getGameByIdSuccess,
-  clearBoard
+  getGameSuccess,
+  clearBoard,
+  newGameSuccess
 
 };

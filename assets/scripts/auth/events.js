@@ -41,8 +41,9 @@ const onGetGameById = function (event) {
   let data = getFormFields(event.target);
   console.log(data);
   api.getGameById(data)
-    .done(ui.success)
+    .done(ui.onGetGameByIdSuccess)
     .fail(ui.failure);
+  console.log(data);
 };
 
 const clearBoard = function (event) {
@@ -57,8 +58,8 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignInUser);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out-button').on('click', onSignOutUser);
-//   $('getGameById').on('submit', onGetGameById);
-//   $('#clear-board').on('submit', clearBoard);
+  $('getGameById').on('submit', onGetGameById);
+  $('#clear-board').on('submit', clearBoard);
 };
 
 

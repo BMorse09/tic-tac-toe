@@ -2,7 +2,7 @@
 
 const app = require ('../app');
 
-const getGameById = function (data){
+const getGame = function (data){
     return $.ajax({
       url: app.host + '/games/' + data.getGameById,
       method: 'GET',
@@ -45,4 +45,6 @@ const getGameById = function (data){
 
   module.exports = {
     newGame,
+    getGame,
+    updateGame
   };

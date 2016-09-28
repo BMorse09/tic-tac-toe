@@ -16,9 +16,9 @@ const signInSuccess = (data) => {
   console.log(data);
   $('#sign-in-modal').modal('hide');
   $('#gameBoard').show();
-  $('.app').css("display", "block");
-  $('.space').text('');
-  $('h1').text('');
+  //$('.app').css("display", "block");
+  //$('.space').text('');
+  //$('h1').text('');
 //   $('#sign-in').hide();
 //   $('#sign-up').hide();
 //   $('#change-password').show();
@@ -35,10 +35,18 @@ const signOutSuccess = () => {
   $('#gameBoard').hide();
 };
 
+const onGetGameIdSuccess = (data) => {
+  console.log(data.length);
+  let length = data.games.length;
+  $("#gameOver").html(length);
+  console.log(data);
+};
+
 module.exports = {
   success,
   failure,
   signInSuccess,
   changePasswordSuccess,
-  signOutSuccess
+  signOutSuccess,
+  onGetGameIdSuccess
 };
