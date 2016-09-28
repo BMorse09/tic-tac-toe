@@ -41,7 +41,7 @@ const onGetGameById = function (event) {
   api.getGameById()
     .done(ui.onGetGameByIdSuccess)
     .fail(ui.failure);
-  console.log(data);
+  // console.log(data);
 };
 
 const clearBoard = function (event) {

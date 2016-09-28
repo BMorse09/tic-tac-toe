@@ -3,17 +3,17 @@
 const app = require('../app');
 
 const success = (data) => {
- console.log(data);
+ // console.log(data);
 };
 
 const failure = (error) => {
- console.log(error);
+ // console.log(error);
 };
 
 
 const getGameSuccess = (data) => {
   app.game = data.game;
-  console.log(data);
+  // console.log(data);
 };
 
 const newGameSuccess = (data) => {
