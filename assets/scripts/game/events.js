@@ -67,7 +67,7 @@ else {
     gameOver = true;
     counter = 0;
     gameBoardArray = [];
-    $("#gameOver").html("It's a tie!");
+    $("#gameOver").html("It's a tie! Gross!");
     // console.log(gameOver);
 
 
@@ -103,16 +103,21 @@ else {
   };
 
   const onPlaceX = function (event) {
+    // console.log('gameOver returns', gameOver);
         if(!gameOver){
         let id=this.id;
           event.preventDefault();
         if (player === 'x' && $(this).text() === ''){
             player = 'o';
         let cellclicked = event.target;
-
         if (gameBoardArray[id] === '') {
             gameBoardArray[id] = 'o';
               $(cellclicked).html('O');
+              // console.log('gameOver returns', gameOver);
+              api.updateGame(id,player,gameOver)
+              .done(ui.success)
+              .fail(ui.failure);
+              ;
               counter++;
             gameOver = win(gameBoardArray, id);
         if  (gameOver === true) {
@@ -129,6 +134,7 @@ else {
         if (gameBoardArray[id] === '') {
             gameBoardArray[id] = 'x';
               $(cellclicked).html('X');
+              api.updateGame(id,player,gameOver);
               counter++;
             gameOver = win(gameBoardArray, id);
         if (gameOver === true) {

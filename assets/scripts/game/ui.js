@@ -17,7 +17,9 @@ const getGameSuccess = (data) => {
 };
 
 const newGameSuccess = (data) => {
+  // console.log('data is', data);
   app.game = data.game;
+
 };
 
 const clearBoard = (data) => {
