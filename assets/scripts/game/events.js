@@ -103,7 +103,7 @@ else {
   };
 
   const onPlaceX = function (event) {
-    console.log('gameOver returns', gameOver);
+    // console.log('gameOver returns', gameOver);
         if(!gameOver){
         let id=this.id;
           event.preventDefault();
@@ -113,7 +113,7 @@ else {
         if (gameBoardArray[id] === '') {
             gameBoardArray[id] = 'o';
               $(cellclicked).html('O');
-              console.log('gameOver returns', gameOver);
+              // console.log('gameOver returns', gameOver);
               api.updateGame(id,player,gameOver)
               .done(ui.success)
               .fail(ui.failure);
