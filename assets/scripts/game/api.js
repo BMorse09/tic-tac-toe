@@ -13,6 +13,7 @@ const getGame = function (data){
   };
 
   const newGame = (data) => {
+    // console.log('newGame data is', data);
     return $.ajax({
       url: app.host + '/games',
       method: "POST",
@@ -24,6 +25,8 @@ const getGame = function (data){
   };
 
   const updateGame = (id,value,TorF) => {
+    // console.log('arguments are', id, value, TorF);
+    // console.log('app.game is', app.game);
     return $.ajax({
       url: app.host + '/games/'+app.game.id,
       method: "PATCH",
