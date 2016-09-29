@@ -114,7 +114,10 @@ else {
             gameBoardArray[id] = 'o';
               $(cellclicked).html('O');
               console.log('gameOver returns', gameOver);
-              api.updateGame(id,player,gameOver);
+              api.updateGame(id,player,gameOver)
+              .done(ui.success)
+              .fail(ui.failure);
+              ;
               counter++;
             gameOver = win(gameBoardArray, id);
         if  (gameOver === true) {
