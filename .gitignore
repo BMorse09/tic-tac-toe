@@ -1,8 +1,8 @@
 tmp
 dist
-bundle.js
+
 specs.js
-vendor.js
+
 _SpecRunner.html
 *.woff2
 *.woff
