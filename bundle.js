@@ -289,13 +289,7 @@ webpackJsonp([0],[
 	  // console.log(data);
 	  $('#sign-in-modal').modal('hide');
 	  $('#gameBoard').show();
-	  //$('.app').css("display", "block");
-	  //$('.space').text('');
-	  //$('h1').text('');
-	  //   $('#sign-in').hide();
-	  //   $('#sign-up').hide();
-	  //   $('#change-password').show();
-	  //   $('#sign-out').show();
+	  $('#new-game-button').click();
 	};
 
 	var changePasswordSuccess = function changePasswordSuccess() {
@@ -389,7 +383,7 @@ webpackJsonp([0],[
 	      gameOver = true;
 	      counter = 0;
 	      gameBoardArray = [];
-	      $("#gameOver").html("It's a tie!");
+	      $("#gameOver").html("It's a tie! Gross!");
 	      // console.log(gameOver);
 
 	    }
@@ -417,16 +411,19 @@ webpackJsonp([0],[
 	};
 
 	var onPlaceX = function onPlaceX(event) {
+	  // console.log('gameOver returns', gameOver);
 	  if (!gameOver) {
 	    var id = this.id;
 	    event.preventDefault();
 	    if (player === 'x' && $(this).text() === '') {
 	      player = 'o';
 	      var cellclicked = event.target;
-
 	      if (gameBoardArray[id] === '') {
 	        gameBoardArray[id] = 'o';
 	        $(cellclicked).html('O');
+	        // console.log('gameOver returns', gameOver);
+	        api.updateGame(id, player, gameOver).done(ui.success).fail(ui.failure);
+	        ;
 	        counter++;
 	        gameOver = win(gameBoardArray, id);
 	        if (gameOver === true) {
@@ -440,6 +437,7 @@ webpackJsonp([0],[
 	      if (gameBoardArray[id] === '') {
 	        gameBoardArray[id] = 'x';
 	        $(_cellclicked).html('X');
+	        api.updateGame(id, player, gameOver);
 	        counter++;
 	        gameOver = win(gameBoardArray, id);
 	        if (gameOver === true) {
@@ -483,6 +481,7 @@ webpackJsonp([0],[
 	};
 
 	var newGame = function newGame(data) {
+	  // console.log('newGame data is', data);
 	  return $.ajax({
 	    url: app.host + '/games',
 	    method: "POST",
@@ -494,6 +493,8 @@ webpackJsonp([0],[
 	};
 
 	var updateGame = function updateGame(id, value, TorF) {
+	  // console.log('arguments are', id, value, TorF);
+	  // console.log('app.game is', app.game);
 	  return $.ajax({
 	    url: app.host + '/games/' + app.game.id,
 	    method: "PATCH",
@@ -541,6 +542,7 @@ webpackJsonp([0],[
 	};
 
 	var newGameSuccess = function newGameSuccess(data) {
+	  // console.log('data is', data);
 	  app.game = data.game;
 	};
 
