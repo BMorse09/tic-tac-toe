@@ -16,13 +16,8 @@ const signInSuccess = (data) => {
   // console.log(data);
   $('#sign-in-modal').modal('hide');
   $('#gameBoard').show();
-  //$('.app').css("display", "block");
-  //$('.space').text('');
-  //$('h1').text('');
-//   $('#sign-in').hide();
-//   $('#sign-up').hide();
-//   $('#change-password').show();
-//   $('#sign-out').show();
+   $('#new-game-button').click();
+
   };
 
 const changePasswordSuccess = () => {
