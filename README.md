@@ -1,4 +1,4 @@
-<!-- WEB DEVELOPMENT IMMERSIVE PROJECT 1: TIC TAC TOE
+ WEB DEVELOPMENT IMMERSIVE PROJECT 1: TIC TAC TOE
 
 For our first project I used multiple technologies to build an
 SPA Tic-Tac-Toe game. These technologies include:
